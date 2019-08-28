@@ -1,0 +1,14 @@
+a value is immutable, when you reassign to another variable it basically copies it. When you change a property it recreates a new value type (like 1 + 2 = 3). (this is deep copied)
+Types that perform deep copies are said to have value semantics.
+
+When a struct with reference types get copied over, the references itself gets copied (so changing it in the other variable changes the original). This is said to be shallow copies.
+
+Functions that take other functions as arguments are referred to as higher-order functions.
+
+Functions that aren't methods are called free functions.
+
+Free functions and methods called on structs are said to be statically dispatched, the function is known at compile time. (called dynamically dispatched on classes/protocols)
+
+The definition of map just appends while flatMap appends(contentsOf:) which would adds the total by one dimension.
+
+ArraySlice is a view on arrays. It’s backed by the original array, yet it provides a view on just the slice. The ArraySlice type has the same methods defined as Array does (because both conform to the same protocols, most importantly Collection),
