@@ -1,4 +1,5 @@
-a value is immutable, when you reassign to another variable it basically copies it. When you change a property it recreates a new value type (like 1 + 2 = 3). (this is deep copied)
+--CHAPTER 1--
+A value is immutable, when you reassign to another variable it basically copies it. When you change a property it recreates a new value type (like 1 + 2 = 3). (this is deep copied)
 Types that perform deep copies are said to have value semantics.
 
 When a struct with reference types get copied over, the references itself gets copied (so changing it in the other variable changes the original). This is said to be shallow copies.
@@ -9,6 +10,20 @@ Functions that aren't methods are called free functions.
 
 Free functions and methods called on structs are said to be statically dispatched, the function is known at compile time. (called dynamically dispatched on classes/protocols)
 
+--CHAPTER 2--
 The definition of map just appends while flatMap appends(contentsOf:) which would adds the total by one dimension.
 
-ArraySlice is a view on arrays. It’s backed by the original array, yet it provides a view on just the slice. The ArraySlice type has the same methods defined as Array does (because both conform to the same protocols, most importantly Collection),
+ArraySlice is a view on arrays. It’s backed by the original array, yet it provides a view on just the slice. The ArraySlice type has the same methods defined as Array does (because both conform to the same protocols, most importantly Collection).
+
+If you mutate an object after using it as a dictionary key in a way that changes its hash value and/or equality, you won't be able to effectively corrupting its internal storage. This isn't a problem with value types because the key in the dictionary doesn't share your copy's storage and thefore can't be mutated from the outside.
+
+Sets: you can subtract set items, find elements that are in both, and combine them remove duplicates.
+
+IndexSet represents a set of positive integer values and is more effienct than Set<Int> becayse it uses a list of ranges internally. So a selection of the first 500 rows in the table only takes two integers to store (the selection's lower and upper bounds).
+
+Unlike IndexSet, CharacterSet isn't a collection. CharacterSet isn't compatible with Swift's Character type.
+
+CountableRange is a type alias for ranges with strideable element types, CountablePartialRange is a type alias for PartialRangeFrom. These used to be part of the standard library until Swift 4.1 and 4.2
+
+--CHAPTER 3--
+
