@@ -26,4 +26,5 @@ Unlike IndexSet, CharacterSet isn't a collection. CharacterSet isn't compatible 
 CountableRange is a type alias for ranges with strideable element types, CountablePartialRange is a type alias for PartialRangeFrom. These used to be part of the standard library until Swift 4.1 and 4.2
 
 --CHAPTER 3--
+Optional chaining is a "flattening operation". String?.uppercased() returns an optional but String?.uppercased().lowercased() does not require optional chaining after uppercased. The optionality is already captured.
 
