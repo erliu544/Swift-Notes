@@ -1,4 +1,4 @@
---CHAPTER 1--
+-- CHAPTER 1 --
 A value is immutable, when you reassign to another variable it basically copies it. When you change a property it recreates a new value type (like 1 + 2 = 3). (this is deep copied)
 Types that perform deep copies are said to have value semantics.
 
@@ -10,7 +10,7 @@ Functions that aren't methods are called free functions.
 
 Free functions and methods called on structs are said to be statically dispatched, the function is known at compile time. (called dynamically dispatched on classes/protocols)
 
---CHAPTER 2--
+-- CHAPTER 2 --
 The definition of map just appends while flatMap appends(contentsOf:) which would adds the total by one dimension.
 
 ArraySlice is a view on arrays. It’s backed by the original array, yet it provides a view on just the slice. The ArraySlice type has the same methods defined as Array does (because both conform to the same protocols, most importantly Collection).
@@ -25,6 +25,27 @@ Unlike IndexSet, CharacterSet isn't a collection. CharacterSet isn't compatible 
 
 CountableRange is a type alias for ranges with strideable element types, CountablePartialRange is a type alias for PartialRangeFrom. These used to be part of the standard library until Swift 4.1 and 4.2
 
---CHAPTER 3--
+-- CHAPTER 3 -- Optionals
+
 Optional chaining is a "flattening operation". String?.uppercased() returns an optional but String?.uppercased().lowercased() does not require optional chaining after uppercased. The optionality is already captured.
 
+Mapping over an optional collection can produce a double optional if the transformation function also has an optional result. This can be resolved by using flatMap. If it's a sequence then use compactMap.You can't use compactMap on single values, but you can with flatMap.
+
+When you have a non-optional value, Swift will always be willing to promote it to an optional value in order to make the types match. For example you'd have to write myDict["someKey"] = Optional(someValue) to assign a value to a dictionary. 
+
+Assigning nil to a dictionary key will remove the key.
+
+To actually assign it nil, the following work:
+dictWithNils["two"] = Optional(nil)
+dictWithNils["two"] = .some(nil)
+dictWithNils["two"]? = nil
+
+The first reason implicitly unwrapped optionals exist is to make interoperability with ObjC and C easier. Theres no way to indicate that a reference was nullable in objc and c. The second reason is two-phase initialization of Cocoa. View Controllers are created lazily, so there exists a time window - after a view controller has been initialized but before it has loaded its view - when the view objects its outlets reference have notyet been created.
+
+You can still use optional unwrapped techniques on implicity (!) unwrapped optionals.
+
+-- CHAPTER 4 -- Functions
+
+Functions are reffered to as "first-class objects" - you can assign functions to variables and pass in and out of other functions.
+
+Swift only allows argument labels in function declarations; the labels aren't included in a function's type. You can't assign argument labels to a variable of a function type.
