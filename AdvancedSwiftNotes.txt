@@ -58,4 +58,8 @@ Technically in programming terminology, a combination of a function and an envir
 
 page 100 starts implementing a complex objc style sort descriptor. (NSSortDescriptor).
 
-Key-value coding looks up the value of a key at runtime. The selector parameter takes a selector which is a string describing a method name. At runtime, the selector is used to look up a cpmparison function, and when comparing two objects, the values for the key are compared using that comparison function.
+Key-value coding looks up the value of a key at runtime. The selector parameter takes a selector which is a string describing a method name. At runtime, the selector is used to look up a comparison function, and when comparing two objects, the values for the key are compared using that comparison function.
+
+inout parameters are NOT pass-by-reference, they are pass-by-value-and-copy-back. They are modified by the function, passed out of the function to replace the original value.
+
+If a function takes an UnsafeMutablePointer as a parameter, then you can pass a var into it using &m similar to inout, but you REALLY are passing by reference.
