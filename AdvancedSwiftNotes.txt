@@ -31,6 +31,8 @@ Optional chaining is a "flattening operation". String?.uppercased() returns an o
 
 Mapping over an optional collection can produce a double optional if the transformation function also has an optional result. This can be resolved by using flatMap. If it's a sequence then use compactMap.You can't use compactMap on single values, but you can with flatMap.
 
+The '==' operator comparing two values whether optionals or not will work becuase Swift does the handling for you.
+
 When you have a non-optional value, Swift will always be willing to promote it to an optional value in order to make the types match. For example you'd have to write myDict["someKey"] = Optional(someValue) to assign a value to a dictionary. 
 
 Assigning nil to a dictionary key will remove the key.
@@ -49,3 +51,11 @@ You can still use optional unwrapped techniques on implicity (!) unwrapped optio
 Functions are reffered to as "first-class objects" - you can assign functions to variables and pass in and out of other functions.
 
 Swift only allows argument labels in function declarations; the labels aren't included in a function's type. You can't assign argument labels to a variable of a function type.
+
+When a function references variables outside its scope, those variables are captured and stick around after they would otherwise fall out of scope and be destroyed.
+
+Technically in programming terminology, a combination of a function and an environment of captured variables is called a closure.
+
+page 100 starts implementing a complex objc style sort descriptor. (NSSortDescriptor).
+
+Key-value coding looks up the value of a key at runtime. The selector parameter takes a selector which is a string describing a method name. At runtime, the selector is used to look up a cpmparison function, and when comparing two objects, the values for the key are compared using that comparison function.
