@@ -63,3 +63,5 @@ Key-value coding looks up the value of a key at runtime. The selector parameter 
 inout parameters are NOT pass-by-reference, they are pass-by-value-and-copy-back. They are modified by the function, passed out of the function to replace the original value.
 
 If a function takes an UnsafeMutablePointer as a parameter, then you can pass a var into it using &m similar to inout, but you REALLY are passing by reference.
+
+You can't mutate a variable through a typecast ( x as? Int = 2 )
