@@ -1,0 +1,31 @@
+-- Chapter 1 -- Overview
+
+Objective-C does not support the following:
+• Type inference.
+• Operator overloading.
+• Protocol extensions.
+• String interpolation.
+• Namespaces.
+• Tuples.
+• Optionals.
+• Playgrounds.
+• guard and defer.
+• Closed and half-open ranges. 
+• Enums with associated values.
+
+Objective-C is aggressively focused on objects.
+
+ObjC retains the ++ and -- operators.
+nil coalescing operator is written as ?: rather than ??.
+
+ObjC the first parameter to a method does not have a label.
+
+Many classes require the "NS" prefix. This is derived from "NeXTStep", a libaries foundation which was used for the cocoa framework.
+
+ObjC has no concept of namespaces, all class names must be globally unique. This is why Apple uses 2, 3, or 4 letter prefixes to make their API class names unique. (UITableView, MKMapView, XCTestCase, etc).
+
+No concept of optionals in ObjC.
+
+You can send a message to a nil object and nothing happens.
+
+'@' signifies the next but is Objective-C.
