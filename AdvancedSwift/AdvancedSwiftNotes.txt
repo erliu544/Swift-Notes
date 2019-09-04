@@ -65,3 +65,6 @@ inout parameters are NOT pass-by-reference, they are pass-by-value-and-copy-back
 If a function takes an UnsafeMutablePointer as a parameter, then you can pass a var into it using &m similar to inout, but you REALLY are passing by reference.
 
 You can't mutate a variable through a typecast ( x as? Int = 2 )
+
+A key-path is an uninvoked reference to a property. More info can be found here: https://www.swiftbysundell.com/articles/the-power-of-key-paths-in-swift/
+
