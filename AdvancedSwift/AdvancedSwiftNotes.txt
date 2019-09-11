@@ -46,6 +46,9 @@ The first reason implicitly unwrapped optionals exist is to make interoperabilit
 
 You can still use optional unwrapped techniques on implicity (!) unwrapped optionals.
 
+You can use map and flatMap on single values. FlatMap on single values will get ride of Optional Optionals.
+
+CompactMap will filter out nil and unwrap non-nil values. Compact Map works with sequences only.
 -- CHAPTER 4 -- Functions
 
 Functions are reffered to as "first-class objects" - you can assign functions to variables and pass in and out of other functions.
