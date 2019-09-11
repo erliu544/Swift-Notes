@@ -68,3 +68,4 @@ You can't mutate a variable through a typecast ( x as? Int = 2 )
 
 A key-path is an uninvoked reference to a property. More info can be found here: https://www.swiftbysundell.com/articles/the-power-of-key-paths-in-swift/
 
+Writable key paths are good for data binding. When you bing two porperties together, property one change will affect property two. This is because you aren't assigning things to variables, you are assigning things to key paths. The Key-Value observing mechanism in Coca does this.
