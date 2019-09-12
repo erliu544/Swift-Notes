@@ -1,4 +1,5 @@
 -- CHAPTER 1 --
+
 A value is immutable, when you reassign to another variable it basically copies it. When you change a property it recreates a new value type (like 1 + 2 = 3). (this is deep copied)
 Types that perform deep copies are said to have value semantics.
 
@@ -11,6 +12,7 @@ Functions that aren't methods are called free functions.
 Free functions and methods called on structs are said to be statically dispatched, the function is known at compile time. (called dynamically dispatched on classes/protocols)
 
 -- CHAPTER 2 --
+
 The definition of map just appends while flatMap appends(contentsOf:) which would adds the total by one dimension.
 
 ArraySlice is a view on arrays. It’s backed by the original array, yet it provides a view on just the slice. The ArraySlice type has the same methods defined as Array does (because both conform to the same protocols, most importantly Collection).
@@ -49,6 +51,7 @@ You can still use optional unwrapped techniques on implicity (!) unwrapped optio
 You can use map and flatMap on single values. FlatMap on single values will get ride of Optional Optionals.
 
 CompactMap will filter out nil and unwrap non-nil values. Compact Map works with sequences only.
+
 -- CHAPTER 4 -- Functions
 
 Functions are reffered to as "first-class objects" - you can assign functions to variables and pass in and out of other functions.
@@ -72,3 +75,15 @@ You can't mutate a variable through a typecast ( x as? Int = 2 )
 A key-path is an uninvoked reference to a property. More info can be found here: https://www.swiftbysundell.com/articles/the-power-of-key-paths-in-swift/
 
 Writable key paths are good for data binding. When you bing two porperties together, property one change will affect property two. This is because you aren't assigning things to variables, you are assigning things to key paths. The Key-Value observing mechanism in Coca does this.
+
+(...skipped the rest of the chapter, will return!)
+
+-- CHAPTER 5 -- Structs and Classes
+
+Value type variables dont contain a reference to an instance, they contain the instance itself.
+
+Changing a property of a struct, even through multiple levels or nesting, is just the same as assigning a new struct instant.
+
+Normal methods on structs defined with the func keyword can't mutate any of the struct's properties. This is because the self parameter that's implicitly passed into every method is immutable by default.
+
+With a mutating method, self is considered to be a var.
