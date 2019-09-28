@@ -87,3 +87,5 @@ Changing a property of a struct, even through multiple levels or nesting, is jus
 Normal methods on structs defined with the func keyword can't mutate any of the struct's properties. This is because the self parameter that's implicitly passed into every method is immutable by default.
 
 With a mutating method, self is considered to be a var.
+
+Structs are simpler when it comes to lifecycle management. They can't have mutliple owners, their lifetime is tied to the lifetime of the variable containing the struct.
