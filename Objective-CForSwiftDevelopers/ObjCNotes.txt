@@ -29,3 +29,16 @@ No concept of optionals in ObjC.
 You can send a message to a nil object and nothing happens.
 
 '@' signifies the next but is Objective-C.
+
+You cannot declare a variable in the first line of a switch case unless you wrap braces around the case.
+
+NSStrings are immutable by default.
+
+Arrays and dictionaries can only hold objects (no int which is a primitive type).
+
+Collections can only hold objects, to hold structs you can use NSValue, obj-c's hack to make it work.
+
+__block allows you to modify a variable inside a block.
+
+__weak allows you to make a weak reference in blocks. (like capture list in swift).
+
